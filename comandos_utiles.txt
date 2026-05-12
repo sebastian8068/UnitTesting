@@ -1,0 +1,24 @@
+[pkg: ipdb]
+python -m unittest discover -v -s tests
+Nota: es recomendable crear el directorio 'src' y 'tests'
+
+python -m unittest tests.test_calculator.Calculator_test.test_sum
+Nota: con esto puedo ejecutar un solo test en vez de todos los tests, solo hay que cambiar el parámetro "discover" por el path al test
+
+PYTHONPATH=. python3 tests/suites.py
+Nota: con esto puedo ejecutar solo las pruebas especificadas en ./tests/suites.py
+
+[coverage]
+coverage run --source src -m unittest discover tests
+Nota: con esto puedes correr todas las pruebas del dir src
+
+coverage report
+Nota: despues de ejecutar coverage run puedes crear un reporte en la terminal
+
+coverage html
+Nota: despues de ejecutar coverage run puedes crear un reporte más detallado pero en html
+
+[doctest]
+python -m doctest src/calculator.py
+con esto puedes ejecutar doctest dentro de métodos, si falla te avisará pero si no no pasará 
+nada al ejecutar el comando, mirar ./src/calculator.py
